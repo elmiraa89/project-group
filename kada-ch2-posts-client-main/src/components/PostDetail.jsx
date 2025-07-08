@@ -25,7 +25,7 @@ function PostDetail() {
 
   return (
     <div>
-      <Link to="/" className="text-blue-500 hover:underline">&larr; Back to posts</Link>
+      <Link to="/posts" className="text-blue-500 hover:underline">&larr; Back to posts</Link>
       {post && (
         <div className="bg-white rounded shadow p-6 mt-4">
           <div className="flex justify-between items-center mb-2">

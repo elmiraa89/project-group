@@ -27,8 +27,8 @@ function AppContent() {
         
         
         <Routes>
-          <Route path="/" element={<First />} />
-          <Route path="/posts" element={<PostList />} /> {/* to show first page with options to login or signup */}
+          <Route path="/" element={<First />} /> {/* to show first page with options to login or signup */}
+          <Route path="/posts" element={<PostList />} /> {/* to show list of posts */}
           <Route path="/new" element={<PostForm />} /> {/* to creat new post */}
           <Route path="/edit/:id" element={<PostForm edit />} /> {/* to edit post*/}
           <Route path="/posts/:id" element={<PostDetail />} /> {/* to view post details */}

@@ -27,13 +27,13 @@ export default function Login() {
       const data = await res.json();
       setMessage(data.message || "Login success!");
 
-      // Store login status and username in localStorage
+      // Store login status and username 
       localStorage.setItem('isLoggedIn', 'true');
-      if (data.username) { // Assuming backend sends username
+      if (data.username) { 
         localStorage.setItem('username', data.username);
       }
       
-      navigate("/"); // Redirect to PostList page upon successful login
+      navigate("/posts"); // Redirect to PostList page upon successful login
     } catch (err) {
       console.error(err);
       setMessage("An error occurred during login.");

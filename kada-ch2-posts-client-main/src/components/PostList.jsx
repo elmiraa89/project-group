@@ -31,7 +31,7 @@ function PostList() {
           if (res.ok) {
             const userData = await res.json();
             setLoggedInUser(userData.username); // Set username from fetched data
-            localStorage.setItem('username', userData.username); // Update localStorage with username
+            localStorage.setItem('username', userData.username); // Update Storage with username
           } else {
             // If fetching user fails (e.g., token expired, unauthorized)
             console.error("Failed to fetch user data:", res.status);
@@ -72,7 +72,7 @@ function PostList() {
         navigate("/login"); // Redirect to login page after logout
       } else {
         console.error("Failed to logout on server.");
-        // Even if server logout fails, clear client-side state
+        
         localStorage.removeItem('username');
         localStorage.removeItem('isLoggedIn');
         setLoggedInUser(null);
@@ -80,7 +80,7 @@ function PostList() {
       }
     } catch (error) {
       console.error("Error during logout:", error);
-      // Clear client-side state on network error
+      
       localStorage.removeItem('username');
       localStorage.removeItem('isLoggedIn');
       setLoggedInUser(null);

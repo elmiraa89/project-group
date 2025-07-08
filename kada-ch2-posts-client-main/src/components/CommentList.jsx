@@ -1,5 +1,4 @@
 // to show many list of comments for a post
-
 import React from "react";
 
 const CommentList = ({ comments }) => (
