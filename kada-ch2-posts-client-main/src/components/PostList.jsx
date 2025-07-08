@@ -22,7 +22,7 @@ function PostList() {
       if (isLoggedIn === 'true') {
         try {
           // Fetch user details from the backend
-          const res = await fetch("http://localhost:5000/auth/me", {
+          const res = await fetch("http://localhost:3000/auth/me", {
             method: "GET",
             headers: { "Content-Type": "application/json" },
             credentials: "include", // Send cookies with the request
@@ -60,7 +60,7 @@ function PostList() {
   const handleLogout = async () => {
     try {
       // Call backend logout endpoint to clear server-side session/cookie
-      const res = await fetch("http://localhost:5000/auth/logout", {
+      const res = await fetch("http://localhost:3000/auth/logout", {
         method: "POST",
         credentials: "include",
       });

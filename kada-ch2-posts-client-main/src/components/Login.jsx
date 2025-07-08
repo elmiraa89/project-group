@@ -11,7 +11,7 @@ export default function Login() {
     e.preventDefault();
     setMessage("");
     try {
-      const res = await fetch("http://localhost:5000/auth/login", {
+      const res = await fetch("http://localhost:3000/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "include", // allow cookies
