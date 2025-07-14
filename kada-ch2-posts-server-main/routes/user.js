@@ -4,13 +4,19 @@ import User from "../models/users.model.js";
 import passport from "../config/passport.js";
 import jwt from "jsonwebtoken";
 import nodemailer from "nodemailer";
+import upload from "../modules/upload.module.js";
 
 const router = Router();
 
-router.post("/signup", async (req, res) => {
+router.post("/signup", upload.single('profileImageUrl'), async (req, res) => {
   const { email, username, password } = req.body; // const hashedPassword = await bcrypt.hash(password, 10)
-
-  const user = await User.create({ username, email, password });
+  const profileImageUrl = req.file ? req.file.location : undefind // Get the uploaded file's location from S3
+  const user = await User.create({ 
+    username, 
+    email, 
+    password, 
+    profileImageUrl
+  });
   res.status(201).json(user);
 });
 
